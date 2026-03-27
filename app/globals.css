@@ -1,11 +1,18 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
 
 @import "tailwindcss";
-
 @import "tw-animate-css";
-
 @import "shadcn/tailwind.css";
+
+/* ✅ REQUIRED FOR CUSTOM COLORS LIKE bg-navy */
+@theme {
+  --color-lime: hsl(82 78% 55%);
+  --color-lime-light: hsl(82 77% 72%);
+  --color-lime-dark: hsl(82 78% 44%);
+
+  --color-navy: hsl(222 47% 11%);
+  --color-navy-light: hsl(217 33% 17%);
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -53,63 +60,38 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ================= FONTS ================= */
+
 .bricolage {
   font-family: "Bricolage Grotesque", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
 }
 
 .archivo-black-regular {
   font-family: "Archivo Black", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .space-grotesk {
   font-family: "Space Grotesk", sans-serif;
-  font-optical-sizing: auto;
+}
+
+
+.poppins-light { font-family: "Poppins", sans-serif; font-weight: 300; }
+.poppins-regular { font-family: "Poppins", sans-serif; font-weight: 400; }
+.poppins-semibold { font-family: "Poppins", sans-serif; font-weight: 600; }
+.poppins-bold { font-family: "Poppins", sans-serif; font-weight: 700; }
+.poppins-extrabold { font-family: "Poppins", sans-serif; font-weight: 800; }
+.poppins-black { font-family: "Poppins", sans-serif; font-weight: 900; }
+
+html, body {
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-style: normal;
 }
 
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bricolage Grotesque", sans-serif;
 }
 
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
+/* ================= COLORS ================= */
 
 :root {
   --background: oklch(1 0 0);
@@ -130,64 +112,59 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
+/* ================= BASE ================= */
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
   }
+
   html {
     @apply font-sans;
+  }
+}
+
+/* ================= UTILITIES ================= */
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-white/40 shadow-xl;
+  }
+
+  /* ✅ FIXED: now works because navy is defined in @theme */
+  .glass-dark {
+    @apply bg-navy/80 backdrop-blur-xl border border-white/10;
+  }
+
+  .gradient-lime {
+    @apply bg-linear-to-r from-lime to-lime-light;
+  }
+
+  .gradient-navy {
+    @apply bg-linear-to-br from-navy to-navy-light;
+  }
+
+  .glow-lime {
+    box-shadow: 0 0 30px hsl(82, 78%, 55%, 0.3), 0 0 60px hsl(82, 78%, 55%, 0.1);
+  }
+
+  .glow-lime-sm {
+    box-shadow: 0 0 15px hsl(82, 78%, 55%, 0.2);
+  }
+
+  .text-gradient-lime {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-lime to-lime-light;
   }
 }
