@@ -2,7 +2,7 @@ import React from 'react'
 
 function CTASection() {
   return (
-    <div>CTASection</div>
+    <div>CTASection Content</div>
   )
 }
 
